@@ -2,12 +2,12 @@
 Class SongNode{ 
     String title;
     String artist;
-    SongNode Next;
+    SongNode next;
     SongeNode prev;
-    public SongeNode (String title,String artist){
+    public SongeNode(String title,String artist){
         this.title = title;
         this.artist = artist;
-        this.Next = null;
+        this.next = null;
         this.prev = null;
      
     }
@@ -17,17 +17,17 @@ Class MusicPlaylist {
     private  SongeNode tail;
     private int size;
 
-    public MusicPlaylist {
-        this.head
-        this.tail
+    public MusicPlaylist() {
+        this.head = null;
+        this.tail = null;
         this.size = 0;
     }
 }
 
 //1.เพิ่ทเพลงที่หัว (Add at Head)
-public void add Song At Head(String title,String artist){
+public void addSongAtHead(String title,String artist){
     SongeNode newSong = new SongeNode (title,artist){
-        if (head = null) {
+        if (head == null) {
             head = newSong;
             tail = newSong;
             head.next = head;
@@ -44,13 +44,13 @@ public void add Song At Head(String title,String artist){
     } 
 
 //2.เพิ่มลงที่ท้าย(Add at Tail)
-public void add Song At tail(String title,String artist){
+public voidadd SongAtTail(String title,String artist){
     if (head == null)
-        add Song at Head(title,artist)
+        addSongATHead(title,artist)
         return;
 
 }
-    SongNode new SongNode (title,artist);
+    SongNode newSong = new SongNode(title,artist);
     new Song.next = head;
     new Song.prev  = tail;
     tail.next = new Song;
@@ -60,65 +60,73 @@ public void add Song At tail(String title,String artist){
         size++
     }
 //3.เพิ่มเพลงที่ตำแหน่งที่กำหนด(Add at position)
-public void add Song At Position(String title,String artist)
-    int position {
-            if (position<0 || position>size){
-                System.out.println"ตำแหน่งที่ผิดพลาด";
+public void add SongAtPosition(String title,String artist,int position) {
+            if (position < 0 || position > size) {
+                System.out.println("ตำแหน่งที่ผิดพลาด");
                 return;
             }
-            if (position == 0;){
-                add  Song At Head(title,artistx);
+            if (position == 0){
+                addSongAtHead(title,artistx);
                 return;
             }
-            SongeNode new Song = new SongeNode(title,artist)
-            for (int i=0; ;<position-1; i++){
-                temp = tempinut;
+            if (position == size {
+                addSongTail(Title,artist);
+                return;
             }
-            newSong.next.prev = temp.next;
+            SongeNode newSong = new SongeNode(title,artist);
+            SongNode temp = head;
+            for (int i=0; i < position -1; i++){
+                temp = temp.next;
+            }
+            newSong.next = temp.next;
             newSong.prev = temp;
-            temp.next = new Song;
+            temp.next.prev = newSong;
+            temp.next = newSong;
             size++;
 
     }
     //4.ลบเพลงที่หัว(DeleteHead)
-    public void delete Song At Head() {
+    public void deleteSongAtHead() {
         if (head == null) return;
         if (size == 1){
             head = null;
             tail = null;
         }
-        size -;
+        size --;
     }
     //5.ลบเพลงที่ท้าย(DeleteTail)
-    public void delete Song At Tail(){
+    public void deleteSongAtTail(){
         if (head == null)  return;
             head = null;
             tail = null;
     } else {
         tail = tail.prev;
         tail.next = head;
-        head.prev.tail; 
+        head.prev = tail; 
     }
-    size - ;
+    size --;
 }
 
 //6.ลบเพลงที่ตำแหน่งที่กำหนด(Delete at position)
-public void delete Song At Position (int position);{
-    if (position < 0 || position) = size{
+public void deleteSongAtPosition (int position);{
+    if (position < 0 || position = size){
         System.out.println"ตำแหน่งที่ผิดพลาด";
         return;
     }
-    if (position = 0){
-        delete Song At gead ||;
+    if (position == 0){
+        deleteSongAtHead ();
         return;
     }
-    if (position==size-1){
-        delete Song At tail ||;
-    } SongNode temp head;
-        for (int i=0;<position if+){
-        temp = temp.next
+    if (position == size - 1) {
+        deleteSongAtTail
+    } 
+    SongNode temp = head;
+        for (int i=0; i <position i++){
+            temp = temp.next;
         }
         temp.prev.next = temp.next;
         temp.next.prev = temp.prev;
-        size -;
+        size --;
+    }
+
 }
